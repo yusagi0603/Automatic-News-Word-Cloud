@@ -16,4 +16,21 @@ NewsURL = {
 
 }
 
-    
+cate_trans = {
+    "社會": "society",
+    "生活": "daily",
+    "國際": "global",
+    "財經":"finance",
+    "科技": "tech",
+    "政治": "politics"
+}
+
+SET_cate = {
+    "society": "41",
+    "daily": "4",
+    "global": "5",
+    "finance": "2",
+    "tech": "7",
+    "politics": "6"
+}
+
