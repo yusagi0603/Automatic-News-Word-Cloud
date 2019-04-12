@@ -13,16 +13,6 @@ import crawler
 ''' Collect Data
 '''
 class NewsWordCloud():
-    # @classmethod
-    # def get_data(cls):
-
-    #     web_config = config.NewsURL 
-    #     reqs = []
-    #     for news_name, news_config in web_config.iteritems(): # SET: {'url', 'hot_list_path'}, CNA: {}
-    #         reqs.append(requests.get(news_config.get('url')))
-    #         print
-    #     reqs = list(requests.get())
-    #     return cls()
 
     def __init__(self):
         self.date = datetime.today().strftime("%Y%m%d")
@@ -62,25 +52,6 @@ class NewsWordCloud():
             self.plot_word_cloud(news_df=news_df,
                     category=target_cate,
                     stop_word_list=stop_word_list)
-
-# def plot_word_cloud(news_df, category, stop_word_list=None):
-
-#     # build dict from news_df for wordcloud
-#     top_10 = news_df.article.apply(lambda x: jieba.analyse.extract_tags(' '.join(jieba.lcut(x)), topK=10, withWeight=True))
-#     text_seties = top_10.apply(lambda tfidf_list: [tfidf_tuple[0] for tfidf_tuple in tfidf_list])
-#     text = ' '.join([st for row in text_seties for st in row])
-    
-#     # generate wordcloud and save plot
-#     stopwords = {}.fromkeys(stop_word_list)
-#     wc = WordCloud(font_path="font/NotoSerifCJKtc-Medium.otf", 
-#                 background_color="white", 
-#                 max_words = 2000 , 
-#                 random_state= 40,      
-#                 stopwords=stopwords) 
-#     wc.generate(text)
-#     wc.to_file('plot/set_{news_cate}_{date}.png'.format(news_cate=category, date=self.date))
-#     logging.info('Save Word Cloud Plot')
-
 
 if __name__ == "__main__":
     
